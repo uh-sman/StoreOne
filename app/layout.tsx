@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { SessionProvider } from "@/providers/session-provider";
 import Navbar from "@/components/Navbar";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body
         className={`${plusJakarta} antialiased`}
       >
+        <SessionProvider>
         <Navbar />
+        </SessionProvider>
         {children}
       </body>
     </html>
